@@ -22,13 +22,13 @@ class Feature:
         self.tags = tags
 
     def deeplink(self, prefix: Optional[str] = None) -> str:
-        path = self.extra_params.get("path", "")
-        if prefix and not path.startswith(prefix):
+        path = self.extra_params.get("path")
+        if prefix and path and not path.startswith(prefix):
             return f"{prefix}/{path}"
         return path
     
     def icon_name_v3(self) -> str:
-        return self.extra_params.get("icon_name_v3", "")
+        return self.extra_params.get("icon_name_v3", "apl3_ic_placeholder")
     
     def feature_flag(self) -> str:
         return self.extra_params.get("segmentation_flag", "")
