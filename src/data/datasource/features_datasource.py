@@ -45,7 +45,7 @@ class FeaturesDataSourceImpl(FeaturesDataSource):
                 index=self.__index
             )
         finally:
-            self.client_wrapper.close()
+            self.client_wrapper.close_quietly()
         features: list[Feature] = []
         for hit in hits:
             source = hit["_source"]
