@@ -2,9 +2,7 @@ from opensearchpy import OpenSearch
 
 from data.opensearch.opensearch_connection_config import OpenSearchConnectionConfig
 
-OPENSEARCH_URL = ""
-OPENSEARCH_USR = ""
-OPENSEARCH_PSW = ""
+from config import settings
 
 class OpenSearchClientWrapper:
 
@@ -60,7 +58,7 @@ class OpenSearchClientWrapper:
     
 opensearch_client_wrapper = OpenSearchClientWrapper(
     connection_config=OpenSearchConnectionConfig(
-        hosts=[OPENSEARCH_URL],
-        auth=(OPENSEARCH_USR, OPENSEARCH_PSW)
+        hosts=[settings.OPENSEARCH_URL],
+        auth=(settings.OPENSEARCH_USR, settings.OPENSEARCH_PSW)
     )
 )
