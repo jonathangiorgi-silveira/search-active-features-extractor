@@ -58,7 +58,7 @@ class OpenSearchClientWrapper:
     
 opensearch_client_wrapper = OpenSearchClientWrapper(
     connection_config=OpenSearchConnectionConfig(
-        hosts=[settings.OPENSEARCH_URL],
-        auth=(settings.OPENSEARCH_USR, settings.OPENSEARCH_PSW)
+        hosts=[settings.get_opensearch_url()],
+        auth=(settings.get_opensearch_usr(), settings.get_opensearch_psw())
     )
 )
